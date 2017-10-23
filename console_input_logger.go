@@ -49,14 +49,14 @@ func (cil *ConsoleInputLogger) Start() {
 	go func() {
 		for {
 			inputRecord := []winapi.INPUT_RECORD_KEY{
-				winapi.INPUT_RECORD_KEY{
+				{
 					EventType: uint16(winapi.KEY_EVENT),
 				},
 			}
 			var count uintptr
 			_, err := winapi.ReadConsoleInputKey(cil.handle, inputRecord, 1, &count)
 			if err.Error() != _SUCCESS {
-				panic(err.Error)
+				panic(err)
 			}
 			keyInput := inputRecord[0].Event
 			coninmsg := &ConsoleInputEvent{
@@ -91,7 +91,7 @@ func (cil *ConsoleInputLogger) Stop() {
 func getStdHandle(nStdHandle uintptr) uintptr {
 	hStdin, err := winapi.GetStdHandle(nStdHandle)
 	if err.Error() != _SUCCESS {
-		panic(err.Error)
+		panic(err)
 	}
 	return hStdin
 }
@@ -101,7 +101,7 @@ func getConsoleMode(handle uintptr) uintptr {
 	var mode uintptr
 	_, err := winapi.GetConsoleMode(handle, &mode)
 	if err.Error() != _SUCCESS {
-		panic(err.Error())
+		panic(err)
 	}
 	return mode
 }
@@ -110,6 +110,6 @@ func getConsoleMode(handle uintptr) uintptr {
 func setConsoleMode(handle uintptr, mode uintptr) {
 	_, err := winapi.SetConsoleMode(handle, mode)
 	if err.Error() != _SUCCESS {
-		panic(err.Error())
+		panic(err)
 	}
 }

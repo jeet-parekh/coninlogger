@@ -1,10 +1,11 @@
-## Console input logger for Go (for Windows)
+## Console input logger
 
 ---
 
 ### About coninlogger
 
-- Use coninlogger to log console input events (for Windows).
+- Use coninlogger to log console input events.
+- Works only for Windows.
 
 ---
 
@@ -16,24 +17,24 @@
 package main
 
 import (
-	"fmt"
-	"github.com/jeet-parekh/coninlogger"
-	"time"
+    "fmt"
+    "github.com/jeet-parekh/coninlogger"
+    "time"
 )
 
 func main() {
-	inl := coninlogger.NewConsoleInputLogger(4)
-	inlmsg := inl.GetMessageChannel()
+    inl := coninlogger.NewConsoleInputLogger(4)
+    inlmsg := inl.GetMessageChannel()
     inl.Start()
     
-	go func() {
-		time.Sleep(time.Second * 3)
-		inl.Stop()
+    go func() {
+        time.Sleep(time.Second * 3)
+        inl.Stop()
     }()
     
-	for v := range inlmsg {
-		fmt.Printf("%+v\n", v)
-	}
+    for v := range inlmsg {
+        fmt.Printf("%+v\n", v)
+    }
 }
 ```
 
