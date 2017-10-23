@@ -3,15 +3,15 @@ package coninlogger
 const (
 	_SUCCESS string = "The operation completed successfully."
 
-	CAPSLOCK_ON uintptr = 0x0080
-	ENHANCED_KEY uintptr = 0x0100
-	LEFT_ALT_PRESSED uintptr = 0x0002
-	LEFT_CTRL_PRESSED uintptr = 0x0008
-	NUMLOCK_ON uintptr = 0x0020
-	RIGHT_ALT_PRESSED uintptr = 0x0001
+	CAPSLOCK_ON        uintptr = 0x0080
+	ENHANCED_KEY       uintptr = 0x0100
+	LEFT_ALT_PRESSED   uintptr = 0x0002
+	LEFT_CTRL_PRESSED  uintptr = 0x0008
+	NUMLOCK_ON         uintptr = 0x0020
+	RIGHT_ALT_PRESSED  uintptr = 0x0001
 	RIGHT_CTRL_PRESSED uintptr = 0x0004
-	SCROLLLOCK_ON uintptr = 0x0040
-	SHIFT_PRESSED uintptr = 0x0010
+	SCROLLLOCK_ON      uintptr = 0x0040
+	SHIFT_PRESSED      uintptr = 0x0010
 
 	VK_0 uintptr = 0x30
 	VK_1 uintptr = 0x31
