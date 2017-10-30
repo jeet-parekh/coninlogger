@@ -2,10 +2,11 @@
 
 ---
 
-### About coninlogger
+### About `coninlogger`
 
-- Use coninlogger to log console input events.
+- Use `coninlogger` to log console input events.
 - Works only for Windows.
+- [Documentation: godoc](https://godoc.org/github.com/jeet-parekh/coninlogger)
 
 ---
 
