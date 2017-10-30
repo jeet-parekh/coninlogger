@@ -38,7 +38,7 @@ func NewConsoleInputLogger(bufferSize uint) *ConsoleInputLogger {
 }
 
 // GetMessageChannel returns the channel through which the messages would be sent.
-func (cil *ConsoleInputLogger) GetMessageChannel() chan *ConsoleInputEvent {
+func (cil *ConsoleInputLogger) GetMessageChannel() <-chan *ConsoleInputEvent {
 	return cil.messages
 }
 
